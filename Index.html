@@ -10,16 +10,13 @@
   </head>
 
   <body>
- <!-- <a href="" id=lnk></a> <br>
-<input type='text' id='userInput' value='' />
-<input type='button' onclick='changeText2()' value='Change Link'/> -->
 
 <div class="form-group">
 <label for="formGroupExampleInput">GTIN lookup</label>
 <a href="" id="lnk"></a>
-        <input type="text" class="form-control" id="userInput" placeholder="Insert GTIN number">
+        <input type="text" class="form-control" id="userInput" placeholder="Insert GTIN number" oninput='gtinResolver()'>
     </div>
-      <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='changeText2()' />
+      <!-- <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='gtinResolver()' /> -->
 
 
       <!-- Optional JavaScript -->
@@ -37,11 +34,13 @@
         <!-- https://id.gs1.org/gtin/05710085209216/lot/Mar2019-10 -->
 
 <script>
-function changeText2(){
-    var userInput = document.getElementById('userInput').value;
-    var lnk = document.getElementById('lnk');
+function gtinResolver(){
+  let userInput = document.getElementById('userInput').value;
+  if(userInput.length == 14) 
+  {
+    let lnk = document.getElementById('lnk');
     lnk.href = "https://id.gs1.org/gtin/" + userInput;
-    // lnk.innerHTML = lnk.href;
     window.location = "https://id.gs1.org/gtin/" + userInput;
+  }
 }
 </script>

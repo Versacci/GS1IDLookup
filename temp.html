@@ -32,10 +32,13 @@
 
 <script>
 function changeText2(){
-    var userInput = document.getElementById('userInput').value;
-    var lnk = document.getElementById('lnk');
+  let userInput = document.getElementById('userInput').value;
+  if(userInput.length > 12)
+  {
+    let lnk = document.getElementById('lnk');
     lnk.href = "https://id.gs1.org/gtin/" + userInput;
     // lnk.innerHTML = lnk.href;
     window.location = "https://id.gs1.org/gtin/" + userInput;
+  }
 }
 </script>
