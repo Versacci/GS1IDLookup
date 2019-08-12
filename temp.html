@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
+</head>
 
-  <body>
- <!-- <a href="" id=lnk></a> <br>
+<body>
+    <!-- <a href="" id=lnk></a> <br>
 <input type='text' id='userInput' value='' />
 <input type='button' onclick='changeText2()' value='Change Link'/> -->
 
-<div class="form-group">
-<label for="formGroupExampleInput">GTIN lookup</label>
-<a href="" id="lnk"></a>
+    <div class="form-group">
+        <label for="formGroupExampleInput">GTIN lookup</label>
+        <a href="" id="lnk"></a>
         <input type="text" class="form-control" id="userInput" placeholder="Insert GTIN number">
     </div>
-      <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='changeText2()' />
+    <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='changeText2()' />
 
 
-      <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -31,14 +32,13 @@
 
 
 <script>
-function changeText2(){
-  let userInput = document.getElementById('userInput').value;
-  if(userInput.length > 12)
-  {
-    let lnk = document.getElementById('lnk');
-    lnk.href = "https://id.gs1.org/gtin/" + userInput;
-    // lnk.innerHTML = lnk.href;
-    window.location = "https://id.gs1.org/gtin/" + userInput;
-  }
-}
+    function changeText2() {
+        let userInput = document.getElementById('userInput').value;
+        if (userInput.length > 12) {
+            let lnk = document.getElementById('lnk');
+            lnk.href = "https://id.gs1.org/gtin/" + userInput;
+            // lnk.innerHTML = lnk.href;
+            window.location = "https://id.gs1.org/gtin/" + userInput;
+        }
+    }
 </script>

@@ -1,46 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
+</head>
 
-  <body>
+<body>
 
-<div class="form-group">
-<label for="formGroupExampleInput">GTIN lookup</label>
-<a href="" id="lnk"></a>
-        <input type="text" class="form-control" id="userInput" placeholder="Insert GTIN number" oninput='gtinResolver()'>
+    <div class="form-group">
+        <label for="formGroupExampleInput">GS1 key registry</label>
+        <a href="" id="lnk"></a>
+        <input type="text" class="form-control" id="userInput" placeholder="Insert GS1 key" oninput='gtinResolver()'>
     </div>
-      <!-- <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='gtinResolver()' /> -->
+    <!-- <input type="button" class="btn btn-info" value="Send" id="frm1_submit" onclick='gtinResolver()' /> -->
 
 
-      <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
- <!-- redirect steps -->
-          <!-- 1. my webpage
+<!-- redirect steps -->
+<!-- 1. my webpage
                2. from my webpage redirect to https://id.gs1.org/gtin/05710085209216/lot/Mar2019-10
                3. that page will redirect to https://tcb-test-web.azurewebsites.net/ConsumerView?productId=05710085209216.Mar2019-10
          -->
-        <!-- https://id.gs1.org/gtin/05710085209216/lot/Mar2019-10 -->
+<!-- https://id.gs1.org/gtin/05710085209216/lot/Mar2019-10 -->
 
 <script>
-function gtinResolver(){
-  let userInput = document.getElementById('userInput').value;
-  if(userInput.length == 14) 
-  {
-    let lnk = document.getElementById('lnk');
-    lnk.href = "https://id.gs1.org/gtin/" + userInput;
-    window.location = "https://id.gs1.org/gtin/" + userInput;
-  }
-}
+    function gtinResolver() {
+        let userInput = document.getElementById('userInput').value;
+        if (userInput.length == 14) {
+            let lnk = document.getElementById('lnk');
+            lnk.href = "https://id.gs1.org/gtin/" + userInput;
+            window.location = "https://id.gs1.org/gtin/" + userInput;
+        }
+    }
 </script>
